@@ -1,0 +1,7 @@
+{
+  "name": "poulltry-farm",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
