@@ -1,0 +1,14 @@
+.header-md::after {
+    display: none;
+}
+ion-header {
+    & div {
+        background-color: var(--ion-custom-background);
+        & ion-img {
+            padding: 25px;
+        }
+    }
+    &.header:after {
+        background: none;
+    }
+}

@@ -31,10 +31,6 @@ body {
 
   }
   ion-content{
-    --ion-background-color:#4E461A ;
+    --ion-background-color:var(--ion-custom-background);
 }
 
-// ion-toolbar{
-//     --border-width:0px;
-//     --ion-background-color:#4E461A ;
-// }
