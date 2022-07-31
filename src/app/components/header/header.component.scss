@@ -5,7 +5,7 @@ ion-header {
     & div {
         background-color: var(--ion-custom-background);
         & ion-img {
-            padding: 25px;
+            padding: 25px 10px 0 10px ;
         }
     }
     &.header:after {

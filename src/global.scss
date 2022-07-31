@@ -26,6 +26,13 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
+@font-face {
+  font-family: 'ABeeZee';
+  src: url('./assets/fonts/ABeeZee-Regular.ttf');
+}
+* {
+  font-family: 'ABeeZee';
+}
 body {
     box-sizing: border-box;
 
@@ -34,3 +41,7 @@ body {
     --ion-background-color:var(--ion-custom-background);
 }
 
+.form__error{
+  color: var(--ion-color-danger);
+  font-size: 16px;
+}
