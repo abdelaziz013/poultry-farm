@@ -1,0 +1,206 @@
+<app-header></app-header>
+<ion-content>
+  <ion-grid >
+    <form [formGroup]="receptionForm" (ngSubmit)="submit()">
+    <ion-row>
+
+
+      <ion-col size="6">
+        <ion-item  lines="none" class="input">
+          <ion-label>اليوم:</ion-label>
+          <ion-input formControlName="day"  type="text"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+         <p class="ion-text-center form__error" *ngIf="formControles.day.touched && formControles.day.errors">
+          برجاء إدخال  اليوم
+          </p>
+
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-item  lines="none" class="input">
+          <ion-label>التاريخ:</ion-label>
+          <ion-input  formControlName="receptionDate"  id="receptionDate" type="text"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.receptionDate.touched && formControles.receptionDate.errors">
+          برجاء إدخال التاريخ
+          </p>
+      </ion-col>
+    </ion-row>
+
+      <ion-popover trigger="receptionDate" size="auto" side="bottom" alignment="start">
+        <ng-template>
+          <ion-datetime
+          presentation="date"
+            locale="ar-AR"
+            (ionChange)="setDateTime($event,'receptionDate')"
+          ></ion-datetime>
+        </ng-template>
+      </ion-popover>
+
+
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-item  lines="none" class="input">
+          <ion-label>المزرعة:</ion-label>
+          <ion-input formControlName="farm"  type="text"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.farm.touched && formControles.farm.errors">
+          برجاء إدخال المزرعة
+          </p>
+
+      </ion-col>
+      <ion-col size="6">
+        <ion-item  lines="none" class="input">
+          <ion-label>كود:</ion-label>
+          <ion-input  formControlName="code"  type="text"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.code.touched && formControles.code.errors">
+          برجاء إدخال الكود
+          </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin-top">
+
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>رقم السيارة:</ion-label>
+          <ion-input formControlName="carNo"  type="text"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.carNo.touched && formControles.carNo.errors">
+          برجاء إدخال رقم السيارة
+          </p>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>اسم السائق:</ion-label>
+          <ion-input   formControlName="driverName" type="text"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.driverName.touched && formControles.driverName.errors">
+          برجاء إدخال اسم السائق
+          </p>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>ساعة المغادرة:</ion-label>
+          <ion-input id="leave"  formControlName="leaveTime"  type="text"  autocomplete="off" clearInput></ion-input>
+          <ion-popover trigger="leave" size="auto" side="bottom" alignment="start">
+            <ng-template>
+              <ion-datetime
+              presentation="time"
+                locale="ar-AR"
+                (ionChange)="setDateTime($event,'leaveTime')"
+              ></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.leaveTime.touched && formControles.leaveTime.errors">
+          برجاء إدخال ساعة المغادرة
+          </p>
+
+      </ion-col>
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>عدد الدجاج:</ion-label>
+          <ion-input  formControlName="poultryNo" type="number"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.poultryNo.touched && formControles.poultryNo.errors">
+          برجاء إدخال عدد الدجاج
+          </p>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>ساعة الوصول:</ion-label>
+          <ion-input  id="arrivalTime" formControlName="arrivalTime" type="text"  autocomplete="off" clearInput></ion-input>
+          <ion-popover trigger="arrivalTime" size="auto" side="bottom" alignment="start">
+            <ng-template>
+              <ion-datetime
+              presentation="time"
+                locale="ar-AR"
+                (ionChange)="setDateTime($event,'arrivalTime')"
+              ></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.arrivalTime.touched && formControles.arrivalTime.errors">
+          برجاء إدخال ساعة الوصول
+          </p>
+
+      </ion-col>
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>نافق السيارة:</ion-label>
+          <ion-input formControlName="cant"  type="number"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.cant.touched && formControles.cant.errors">
+          برجاء إدخال عدد النافق
+          </p>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>بدء الذبح:</ion-label>
+          <ion-input id="slStart" formControlName="slaughterStart"  type="text"  autocomplete="off" clearInput></ion-input>
+          <ion-popover trigger="slStart" size="auto" side="bottom" alignment="start">
+            <ng-template>
+              <ion-datetime
+              presentation="time"
+                locale="ar-AR"
+                (ionChange)="setDateTime($event,'slaughterStart')"
+              ></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.slaughterStart.touched && formControles.slaughterStart.errors">
+        برجاء إدخال ساعة بداية الذبح
+          </p>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>نهاية الذبح:</ion-label>
+          <ion-input  id="slEnd" formControlName="slaughterEnd" type="text"  autocomplete="off" clearInput></ion-input>
+          <ion-popover trigger="slEnd" size="auto" side="bottom" alignment="start">
+            <ng-template>
+              <ion-datetime
+              presentation="time"
+                locale="ar-AR"
+                (ionChange)="setDateTime($event,'slaughterEnd')"
+              ></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.slaughterEnd.touched && formControles.slaughterEnd.errors">
+          برجاء إدخال ساعة نهاية الذبح
+            </p>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>إعدامات:</ion-label>
+          <ion-input  formControlName="executionNo" type="number"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.executionNo.touched && formControles.executionNo.errors">
+          برجاء إدخال عدد الأعدامات
+        </p>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item  lines="none" class="input">
+          <ion-label>سند الإخراج:</ion-label>
+          <ion-input  formControlName="outPutVoucher" type="text"  autocomplete="off" clearInput></ion-input>
+        </ion-item>
+        <p class="ion-text-center form__error" *ngIf="formControles.outPutVoucher.touched && formControles.outPutVoucher.errors">
+          برجاء إدخال سند الإخراج
+        </p>
+      </ion-col>
+
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-margin-top">
+      <ion-button  [disabled]="!receptionForm.valid"type="submit" class="btn">
+        حفظ
+      </ion-button>
+    </ion-row>
+  </form>
+  </ion-grid>
+
+
+
+</ion-content>

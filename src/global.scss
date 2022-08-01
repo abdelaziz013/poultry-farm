@@ -24,7 +24,7 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-
+@import "theme/button";
 
 @font-face {
   font-family: 'ABeeZee';
@@ -32,6 +32,7 @@
 }
 * {
   font-family: 'ABeeZee';
+  // color: #ffffff;
 }
 body {
     box-sizing: border-box;
@@ -39,9 +40,26 @@ body {
   }
   ion-content{
     --ion-background-color:var(--ion-custom-background);
+
 }
 
 .form__error{
   color: var(--ion-color-danger);
   font-size: 16px;
+}
+
+
+ion-popover {
+  --width: 82.5%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

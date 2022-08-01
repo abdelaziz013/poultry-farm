@@ -23,8 +23,9 @@
         <p class="ion-text-center form__error" *ngIf="formControles.password.touched && formControles.password.errors">
           برجاء إدخال كلمة المرور
           </p>
-        <ion-row class="ion-justify-content-center ion-margin-top btn">
-          <ion-button [disabled]="!loginForm.valid" type="submit" class="login__button">
+          <!-- [disabled]="!loginForm.valid"  type="submit" -->
+        <ion-row class="ion-justify-content-center ion-margin-top">
+          <ion-button  type="button" href="reception/reception-form" class="btn">
             تسجيل الدخول
           </ion-button>
         </ion-row>
