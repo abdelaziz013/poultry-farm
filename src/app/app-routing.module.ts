@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'reception',
     loadChildren: () => import('./pages/reception/reception.module').then( m => m.ReceptionPageModule)
   },
+  {
+    path: 'quality',
+    loadChildren: () => import('./pages/quality/quality.module').then( m => m.QualityPageModule)
+  },
 ];
 
 @NgModule({
