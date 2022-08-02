@@ -10,22 +10,6 @@ import { format, parseISO } from 'date-fns';
 })
 export class QualityPage implements OnInit {
   qualityForm: FormGroup = new FormGroup({
-    day: new FormControl('', {
-      updateOn: 'change',
-      validators: [Validators.required]
-    }),
-    qualityDate: new FormControl('', {
-      updateOn: 'change',
-      validators: [Validators.required]
-    }),
-    farm: new FormControl('', {
-      updateOn: 'change',
-      validators: [Validators.required]
-    }),
-    code: new FormControl('', {
-      updateOn: 'change',
-      validators: [Validators.required]
-    }),
     chestContusions: new FormControl('', {
       updateOn: 'change',
       validators: [Validators.required]
@@ -73,10 +57,8 @@ export class QualityPage implements OnInit {
     if (!this.qualityForm.valid) {
       return;
     }
-    console.log(this.qualityForm.value);
   }
-  setDateTime(e: IonDatetimeCustomEvent<DatetimeChangeEventDetail>, controlName: string) {
-    const formattedString = format(parseISO(e.detail.value as string), 'MMM d, yyyy');
-    this.qualityForm.controls[controlName].setValue(formattedString);
+  addChildForm(name: string, group: FormGroup) {
+    this.qualityForm.addControl(name, group);
   }
 }

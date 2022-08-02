@@ -2,7 +2,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DatetimeChangeEventDetail, IonDatetimeCustomEvent } from '@ionic/core';
-
 import { format, parseISO } from 'date-fns';
 @Component({
   selector: 'app-reception-form',
@@ -11,22 +10,6 @@ import { format, parseISO } from 'date-fns';
 })
 export class ReceptionFormPage implements OnInit {
   receptionForm: FormGroup = new FormGroup({
-    day: new FormControl('', {
-      updateOn: 'change',
-      validators: [Validators.required]
-    }),
-    receptionDate: new FormControl('', {
-      updateOn: 'change',
-      validators: [Validators.required]
-    }),
-    farm: new FormControl('', {
-      updateOn: 'change',
-      validators: [Validators.required]
-    }),
-    code: new FormControl('', {
-      updateOn: 'change',
-      validators: [Validators.required]
-    }),
     carNo: new FormControl('', {
       updateOn: 'change',
       validators: [Validators.required]
@@ -75,7 +58,9 @@ export class ReceptionFormPage implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
+  addChildForm(name: string, group: FormGroup) {
+    this.receptionForm.addControl(name, group);
+  }
   submit() {
     if (!this.receptionForm.valid) {
       return;

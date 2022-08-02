@@ -8,6 +8,7 @@ import { ReceptionFormPageRoutingModule } from './reception-form-routing.module'
 
 import { ReceptionFormPage } from './reception-form.page';
 import { SharedModule } from 'src/app/shared.module';
+import { FarmDataComponent } from '../../../components/farm-data/farm-data.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { SharedModule } from 'src/app/shared.module';
     ReceptionFormPageRoutingModule,
     SharedModule
   ],
-  declarations: [ReceptionFormPage]
+  declarations: [ReceptionFormPage,FarmDataComponent]
 })
 export class ReceptionFormPageModule {}

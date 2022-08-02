@@ -24,6 +24,7 @@ const routes: Routes = [
     path: 'quality',
     loadChildren: () => import('./pages/quality/quality.module').then( m => m.QualityPageModule)
   },
+
 ];
 
 @NgModule({

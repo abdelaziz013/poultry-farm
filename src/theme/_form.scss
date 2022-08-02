@@ -1,0 +1,27 @@
+    ion-input {
+        --background:#ffffff !important;
+        width: 90px;
+        height: 32px;
+        font-size: 20x;
+        --padding-start: 10px !important;
+        border-radius: 10px;
+      }
+  ion-label {
+    font-size: 22px !important;
+    padding-left: 6px;
+    min-width: 40%;
+    color: #ffffff !important;
+  }
+  ion-textarea {
+    --background: #ffffff !important;
+    padding: 5px 10px;
+    width: 302px !important;
+    height: 163px !important;
+    border-radius: 4px;
+  }
+  .form__error{
+    color: var(--ion-color-danger);
+    font-size: 16px;
+    margin-top:-1px;
+    margin-bottom:0px;
+  }

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FarmDataComponent } from './components/farm-data/farm-data.component';
+
 
 
 
@@ -10,8 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule
 
   ],
-  exports: [HeaderComponent,ReactiveFormsModule,]
+  exports: [HeaderComponent,ReactiveFormsModule, FormsModule]
 })
 export class SharedModule { }
