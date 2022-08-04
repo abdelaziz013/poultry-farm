@@ -13,7 +13,7 @@ export class QualityService {
   constructor(private http: HttpClient, private errorService: ErrorService) { }
   addQualityReport(qualityData: Quality) {
     const payload = { data: { ...qualityData} };
-    return this.http.post(`${environment.apiURL}/Receptions`, payload).pipe(
+    return this.http.post(`${environment.apiURL}/Qualities`, payload).pipe(
       catchError(err => this.errorService.handleError(err))
     );
   }
