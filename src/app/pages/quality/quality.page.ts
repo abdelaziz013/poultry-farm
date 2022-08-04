@@ -57,6 +57,9 @@ export class QualityPage implements OnInit {
     if (!this.qualityForm.valid) {
       return;
     }
+    const{chestContusions,wings,legs,backScratches,machineDamage,execution,
+      diagnosis, causes, recommendation
+    }=this.qualityForm.value;
   }
   addChildForm(name: string, group: FormGroup) {
     this.qualityForm.addControl(name, group);
